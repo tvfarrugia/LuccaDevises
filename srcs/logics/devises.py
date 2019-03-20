@@ -8,7 +8,8 @@ class Devises:
     def __init__(self, f):
         self.process(f)
 
-    def get_value(self, line, is_start=False):
+    # Parse the the line and store rate of currency
+    def get_rate(self, line, is_start=False):
         data = line.strip().replace(b'\n', b'').split(b';')
         if is_start is True:
             self.D1 = data[0]
@@ -22,7 +23,8 @@ class Devises:
                 self.RATE[data[0]] = {
                     data[1]: data[2],
                 }
-        
+    
+    # Read the file and call the parser get_rate.
     def process(self, f):
         line = None
         
@@ -30,6 +32,6 @@ class Devises:
             while line is not b'':
                 line = f.readline()
                 if self.D1 is None:
-                    self.get_value(line, True)
+                    self.get_rate(line, True)
                 else:
-                    self.get_value(line)
+                    self.get_rate(line)

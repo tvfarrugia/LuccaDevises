@@ -7,12 +7,18 @@ class LuccaConverter:
     DEVISES = None
     GRAPH = None
 
+    # Initialize main variable and parse the file pass in parameter.
     def __init__(self, f):
         self.DEVISES = Devises(f)
         self.GRAPH = Graph()
 
+    # Create and render
+    # Call our two main function:
+    # -  Build who build the graph and get_step who
+    # solve the shortest path and print the result
     def process(self):
-        self.GRAPH.process(self.DEVISES)
+        self.GRAPH.build(self.DEVISES)
+        self.GRAPH.get_step(self.DEVISES)
 
 if __name__ == '__main__':
     lc = None
