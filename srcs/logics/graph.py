@@ -8,8 +8,8 @@ class Graph:
     def __init__(self):
         self.GRAPH = nx.Graph()
 
-    # As the name talk this method will build our graph
-    # with the help of the networkx api: https://networkx.github.io/
+    # This method will build our graph with the help of the networkx api:
+    # https://networkx.github.io/
     # The graph is construct like this:
     # Currency->edge->Currency->edge ....:
     # Each edge has an attribute who contains two variable:

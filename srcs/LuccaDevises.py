@@ -22,9 +22,8 @@ class LuccaConverter:
 
 if __name__ == '__main__':
     lc = None
-    argumentparser = argparse.ArgumentParser(description="LuccaDevise.py <file contains devises>")
+    argumentparser = argparse.ArgumentParser(description="LuccaDevise.py -f <file contains devises>")
     argumentparser.add_argument('-f', '--file', help='--file <file>')
-    
     args = argumentparser.parse_args()
     try:
         lc = LuccaConverter(args.file)
