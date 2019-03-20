@@ -23,6 +23,7 @@ class Graph:
         i = 0
         path = nx.shortest_path(self.GRAPH, D1, D2)
         rate = 0
+        print("You have {} {} and want to have {}".format(round(AMOUNT), D1.decode('utf-8'), D2.decode('utf-8')))
         while i < (len(path) - 1):
             edge = self.GRAPH.edges[path[i], path[i+1]]
             rate = edge[(path[i], path[i+1])]
@@ -31,7 +32,7 @@ class Graph:
             path[i].decode('utf-8'), path[i+1].decode('utf-8'), AMOUNT, rate, tmp))
             AMOUNT = tmp
             i += 1
-        print("You have now {} {}".format(round(AMOUNT), D2.decode('utf-8')))
+        print("You have {} {}".format(round(AMOUNT), D2.decode('utf-8')))
 
     def process(self, devises):
         self.build(devises)
